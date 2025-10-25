@@ -77,8 +77,7 @@ For a true desktop companion experience:
 3. Set browser to always on top for overlay effect
 
 Enjoy your new virtual friend! 🎉
-## Sys
-tem Tray Controls 🎛️
+## System Tray Controls 🎛️
 
 Right-click the Mimo icon in your system tray to access:
 - **Show/Hide Mimo**: Toggle visibility
