@@ -1,0 +1,49 @@
+{
+  "name": "cute-mimo-desktop",
+  "version": "1.0.0",
+  "description": "Virtual Desktop Companion - Hologram Buddy",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "dist": "electron-builder --publish=never"
+  },
+  "keywords": ["desktop", "companion", "hologram", "virtual-pet"],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^27.0.0",
+    "electron-builder": "^24.6.4"
+  },
+  "dependencies": {
+    "auto-launch": "^5.0.5",
+    "electron-store": "^8.1.0"
+  },
+  "build": {
+    "appId": "com.yourname.cute-mimo",
+    "productName": "Cute Mimo",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "renderer.js",
+      "control-panel.js",
+      "index.html",
+      "control-panel.html",
+      "styles.css",
+      "control-panel.css",
+      "assets/**/*"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createStartMenuShortcut": true,
+      "createDesktopShortcut": true
+    }
+  }
+}

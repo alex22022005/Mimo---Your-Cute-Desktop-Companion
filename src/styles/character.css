@@ -1,0 +1,176 @@
+/**
+ * Character styles - Mimo character appearance and basic animations
+ */
+
+#mimo-character {
+    width: 100px;
+    height: 140px;
+    position: relative;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: all 0.3s ease;
+    -webkit-app-region: no-drag;
+    user-select: none;
+}
+
+/* Robot Head */
+.mimo-body {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #e8e8e8, #c0c0c0);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 
+        0 0 20px rgba(255, 255, 255, 0.8),
+        inset 0 -5px 10px rgba(0, 0, 0, 0.1),
+        0 5px 15px rgba(0, 0, 0, 0.2);
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Robot Body */
+.mimo-body::after {
+    content: '';
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 50px;
+    background: linear-gradient(135deg, #f0f0f0, #d0d0d0);
+    border-radius: 15px 15px 20px 20px;
+    box-shadow: 
+        inset 0 -3px 8px rgba(0, 0, 0, 0.1),
+        0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Robot Arms */
+.mimo-body::before {
+    content: '';
+    position: absolute;
+    top: 60px;
+    left: -15px;
+    width: 90px;
+    height: 8px;
+    background: linear-gradient(90deg, 
+        #d0d0d0 0%, #d0d0d0 15%, transparent 15%, transparent 25%,
+        #d0d0d0 25%, #d0d0d0 40%, transparent 40%, transparent 60%,
+        #d0d0d0 60%, #d0d0d0 75%, transparent 75%, transparent 85%,
+        #d0d0d0 85%, #d0d0d0 100%);
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Camera Eye */
+.mimo-face {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 35px;
+    height: 35px;
+}
+
+.eyes {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.eye {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 28px;
+    height: 28px;
+    background: radial-gradient(circle at 30% 30%, #4a90e2, #2c5aa0, #1a365d);
+    border-radius: 50%;
+    border: 3px solid #333;
+    box-shadow: 
+        inset 0 0 10px rgba(0, 0, 0, 0.3),
+        0 0 15px rgba(74, 144, 226, 0.5);
+    animation: cameraGlow 3s ease-in-out infinite;
+}
+
+.eye::after {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 8px;
+    width: 6px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    animation: blink 4s infinite;
+}
+
+.left-eye {
+    display: none;
+}
+
+.right-eye {
+    position: relative;
+}
+
+.mouth {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px;
+    height: 4px;
+    background: #333;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Basic animations */
+@keyframes float {
+    0%, 100% { transform: translateX(-50%) translateY(0px); }
+    50% { transform: translateX(-50%) translateY(-8px); }
+}
+
+@keyframes blink {
+    0%, 90%, 100% { opacity: 1; }
+    95% { opacity: 0.3; }
+}
+
+@keyframes cameraGlow {
+    0%, 100% { 
+        box-shadow: 
+            inset 0 0 10px rgba(0, 0, 0, 0.3),
+            0 0 15px rgba(74, 144, 226, 0.5);
+    }
+    50% { 
+        box-shadow: 
+            inset 0 0 10px rgba(0, 0, 0, 0.3),
+            0 0 25px rgba(74, 144, 226, 0.8);
+    }
+}
+
+/* Hologram effect */
+#mimo-character::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(74, 144, 226, 0.3) 50%,
+        transparent 100%
+    );
+    animation: hologram 3s linear infinite;
+    border-radius: 50px;
+    pointer-events: none;
+}
+
+@keyframes hologram {
+    0% { transform: translateX(-120%); }
+    100% { transform: translateX(120%); }
+}

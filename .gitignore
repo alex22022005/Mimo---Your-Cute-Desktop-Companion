@@ -1,0 +1,28 @@
+# Node.js Dependencies
+# This is the most important one. This folder contains all downloaded
+# packages and can be huge. It's rebuilt by running `npm install`.
+node_modules/
+
+# VS Code Editor Configuration
+# This folder saves your personal editor settings and workspace setup.
+.vscode/
+
+# Environment Variables
+# This file stores secret API keys, passwords, etc.
+# Never commit this to GitHub!
+.env
+
+# Log files
+npm-debug.log*
+*.log
+
+# Build Output
+# When you package your Electron app, it creates output folders
+# like 'dist', 'build', or 'out'.
+dist/
+build/
+out/
+
+# Operating System Files
+.DS_Store
+Thumbs.db

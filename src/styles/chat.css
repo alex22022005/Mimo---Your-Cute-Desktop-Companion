@@ -1,0 +1,41 @@
+/**
+ * Chat styles - Chat bubble and messaging interface
+ */
+
+#chat-bubble {
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: 2px solid #ff6b9d;
+    max-width: 200px;
+    pointer-events: auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+#chat-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #ff6b9d;
+}
+
+#chat-text {
+    margin: 0;
+    font-size: 12px;
+    color: #2c2c54;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}

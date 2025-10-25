@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mimo Control Panel</title>
+    <link rel="stylesheet" href="control-panel.css">
+</head>
+<body>
+    <div class="control-panel">
+        <div class="header">
+            <div class="logo">
+                <div class="robot-icon"></div>
+                <h1>Mimo Control Panel</h1>
+            </div>
+            <div class="status-indicator">
+                <span class="status-dot" id="status-dot"></span>
+                <span class="status-text" id="status-text">Offline</span>
+            </div>
+        </div>
+
+        <div class="main-controls">
+            <div class="control-section">
+                <h2>Robot Control</h2>
+                <div class="button-group">
+                    <button id="start-btn" class="control-btn start-btn">
+                        <span class="btn-icon">▶</span>
+                        Start Mimo
+                    </button>
+                    <button id="stop-btn" class="control-btn stop-btn" disabled>
+                        <span class="btn-icon">⏸</span>
+                        Stop Mimo
+                    </button>
+                    <button id="restart-btn" class="control-btn restart-btn">
+                        <span class="btn-icon">🔄</span>
+                        Restart
+                    </button>
+                </div>
+            </div>
+
+            <div class="control-section">
+                <h2>Settings</h2>
+                <div class="setting-item">
+                    <label class="switch">
+                        <input type="checkbox" id="autostart-toggle">
+                        <span class="slider"></span>
+                    </label>
+                    <div class="setting-info">
+                        <span class="setting-title">Auto-start on Boot</span>
+                        <span class="setting-desc">Automatically start Mimo when Windows starts</span>
+                    </div>
+                </div>
+
+                <div class="setting-item">
+                    <label class="switch">
+                        <input type="checkbox" id="sound-toggle" checked>
+                        <span class="slider"></span>
+                    </label>
+                    <div class="setting-info">
+                        <span class="setting-title">Sound Effects</span>
+                        <span class="setting-desc">Enable robot sounds and speech</span>
+                    </div>
+                </div>
+
+                <div class="setting-item">
+                    <label class="switch">
+                        <input type="checkbox" id="chat-toggle" checked>
+                        <span class="slider"></span>
+                    </label>
+                    <div class="setting-info">
+                        <span class="setting-title">Random Chats</span>
+                        <span class="setting-desc">Allow Mimo to chat randomly</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-section">
+                <h2>Behavior Settings</h2>
+                <div class="slider-setting">
+                    <label>Movement Speed</label>
+                    <input type="range" id="speed-slider" min="1" max="10" value="5">
+                    <span id="speed-value">5</span>
+                </div>
+
+                <div class="slider-setting">
+                    <label>Chat Frequency</label>
+                    <input type="range" id="chat-frequency" min="1" max="10" value="5">
+                    <span id="chat-freq-value">5</span>
+                </div>
+
+                <div class="slider-setting">
+                    <label>Activity Level</label>
+                    <input type="range" id="activity-slider" min="1" max="10" value="5">
+                    <span id="activity-value">5</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-label">Uptime:</span>
+                    <span class="stat-value" id="uptime">00:00:00</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Interactions:</span>
+                    <span class="stat-value" id="interactions">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Messages:</span>
+                    <span class="stat-value" id="messages">0</span>
+                </div>
+            </div>
+            <button id="minimize-btn" class="minimize-btn">Minimize to Tray</button>
+        </div>
+    </div>
+
+    <script src="control-panel.js"></script>
+</body>
+</html>
